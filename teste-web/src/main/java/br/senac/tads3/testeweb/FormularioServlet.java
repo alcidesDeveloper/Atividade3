@@ -20,7 +20,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 /**
  *
  * @author fernando.tsuda
@@ -39,19 +38,7 @@ public class FormularioServlet extends HttpServlet {
    */
   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
 	  throws ServletException, IOException {
-    response.setContentType("text/html;charset=UTF-8");
-    try (PrintWriter out = response.getWriter()) {
-      /* TODO output your page here. You may use following sample code. */
-      out.println("<!DOCTYPE html>");
-      out.println("<html>");
-      out.println("<head>");
-      out.println("<title>Servlet FormularioServlet</title>");      
-      out.println("</head>");
-      out.println("<body>");
-      out.println("<h1>Servlet FormularioServlet at " + request.getContextPath() + "</h1>");
-      out.println("</body>");
-      out.println("</html>");
-    }
+
   }
 
   // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -81,38 +68,24 @@ public class FormularioServlet extends HttpServlet {
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	  throws ServletException, IOException {
     
-    String nome = request.getParameter("nome");
+   /* String nome = request.getParameter("nome");
     String email = request.getParameter("email");
-    String senha = request.getParameter("senha");
     String dtNascStr = request.getParameter("dtnasc");
-    String sexoStr = request.getParameter("sexo");
-    String[] interesses = request.getParameterMap().get("interesses");
-    String opcaoStr = request.getParameter("opcao");
+    String Tel = request.getParameter("telefone");
+
     
     DateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
     Date dtNasc = null;
     try {
       dtNasc = formatador.parse(dtNascStr);
     } catch (ParseException ex) {
-      //TODO: Fazer tratamento se data for invalida
-    }
+    }*/
     
-    int sexo = Integer.parseInt(sexoStr);
 
-    // PROCESSAMENTO DOS DADOS
+   // request.setAttribute("nome", nome);
+   // request.setAttribute("email", email);
+   // request.setAttribute("dtnascimento", dtNasc);
     
-    
-    // Seta os atributos para compartilhar os valores com o jsp
-    // Nao confundir get/setAttribute com getParameter!!!
-    request.setAttribute("id", request.getParameter("id"));
-    request.setAttribute("nome", nome);
-    request.setAttribute("email", email);
-    request.setAttribute("senha", senha);
-    request.setAttribute("dtnascimento", dtNasc);
-    request.setAttribute("salario", new BigDecimal(1000000));
-    request.setAttribute("sexo", sexo);
-    request.setAttribute("interesses", interesses);
-    request.setAttribute("opcao", opcaoStr);
     
     // Encaminhamento para o processamento continuar no jsp.
     RequestDispatcher dispatcher =
