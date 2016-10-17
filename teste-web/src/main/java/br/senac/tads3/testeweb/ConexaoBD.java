@@ -19,11 +19,11 @@ public class ConexaoBD {
     Connection conn;
     Class.forName("org.apache.derby.jdbc.ClientDataSource");
     
-    conn = DriverManager.getConnection (
-	    " Jdbc: derby://localhost:1527/agendabd;securityMechanism =3",
-	    "App",
-	    "App");
-               
-            return conn;
+      conn = DriverManager.getConnection(
+	    "jdbc:derby://localhost:1527/agendabd;SecurityMechanism=3",
+	    "app", // usuário BD
+	    "app"); // senha BD
+    return conn;
+
     }
 }

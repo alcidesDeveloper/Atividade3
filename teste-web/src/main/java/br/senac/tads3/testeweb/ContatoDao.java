@@ -6,7 +6,7 @@
 package br.senac.tads3.testeweb;
 
 import java.sql.Connection;
-import java.sql.Date;
+import java.util.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -66,9 +66,9 @@ public class ContatoDao extends ConexaoBD {
     public void incluiContato(String nome, Date dataNasc, String telefone, String email){
         try {
             conn = retornaConexao();
-            conn.prepareStatement("INSERT INTO TB_CONTATO VALUES(?,?,?,?,?)");
+            st = conn.prepareStatement("INSERT INTO TB_CONTATO(NM_CONTATO,DT_NASCIMENTO,VL_TELEFONE,VL_EMAIL,DT_CADASTRO)VALUES(?,?,?,?,?)");
             st.setString(1,nome );
-            st.setDate(2, new java.sql.Date (dateNasc.getTime()));
+            st.setDate(2,new java.sql.Date(dataNasc.getTime()));
             st.setString(3, telefone);
             st.setString(4, email);
             st.setDate(5, new java.sql.Date(System.currentTimeMillis()));

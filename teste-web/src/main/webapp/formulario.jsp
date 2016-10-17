@@ -27,7 +27,7 @@
 <Label for="nome">Nome</Label><input type="text" id="nome" name="nome"/>
 <Label for="nasc">Data de Nascimento</Label><input type="date" id="nasc" name="dataNasc"/>
 <Label for="tel">Telefone</Label><input type="text" id="tel" name="telefone"/>
-<Label for="email">Email</Label><input type="text" id="email" name="email"/>
+<Label for="email">Email</Label><input type="email" id="email" name="email"/>
 
 </fieldset>
       

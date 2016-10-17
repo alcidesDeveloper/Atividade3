@@ -18,14 +18,13 @@
   <body>
     <h1>Informações dos Contatos</h1>
     <div>
-        <c:forEach var="i" begin="1" end="5">
-	Data de nascimento:
-        <c:out value="${i}"/>
-        </c:forEach>
+       <c:forEach items="${list}" var="value">
+  <li><c:out value="${value}"/></li>
+ </c:forEach>
      
  
         <p>
-    <a href="teste-servlet">Voltar para a tela do TesteServlet</a>
+    <a href="formulario.jsp">Voltar para a tela do TesteServlet</a>
   </p>
   
 </div>

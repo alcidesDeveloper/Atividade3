@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -67,10 +68,11 @@ public class FormularioServlet extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	  throws ServletException, IOException {
-    
-   /* String nome = request.getParameter("nome");
+     ContatoDao dao = new ContatoDao();
+     
+    String nome = request.getParameter("nome");
     String email = request.getParameter("email");
-    String dtNascStr = request.getParameter("dtnasc");
+    String dtNascStr = request.getParameter("dataNasc");
     String Tel = request.getParameter("telefone");
 
     
@@ -79,13 +81,16 @@ public class FormularioServlet extends HttpServlet {
     try {
       dtNasc = formatador.parse(dtNascStr);
     } catch (ParseException ex) {
-    }*/
+    }
     
-
-   // request.setAttribute("nome", nome);
-   // request.setAttribute("email", email);
-   // request.setAttribute("dtnascimento", dtNasc);
+    if(nome!=null && email!=null && dtNascStr!=null && Tel!=null){
+    dao.incluiContato(nome, dtNasc, Tel, email);
+    }
+ 
+  
+  ArrayList<String> contatos = dao.carregaDados();
     
+      request.setAttribute("list", contatos);
     
     // Encaminhamento para o processamento continuar no jsp.
     RequestDispatcher dispatcher =
