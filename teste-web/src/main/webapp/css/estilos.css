@@ -2,3 +2,9 @@ label {
   display: inline-block;
   width: 150px;
 }
+td {
+    border: solid 0.5px;
+}
+table{
+    border: dotted 2px;
+}

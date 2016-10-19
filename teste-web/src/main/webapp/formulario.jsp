@@ -24,10 +24,10 @@
 
 <legend>Cadastro</legend>
 
-<Label for="nome">Nome</Label><input type="text" id="nome" name="nome"/>
-<Label for="nasc">Data de Nascimento</Label><input type="date" id="nasc" name="dataNasc"/>
-<Label for="tel">Telefone</Label><input type="text" id="tel" name="telefone"/>
-<Label for="email">Email</Label><input type="email" id="email" name="email"/>
+<Label for="nome">Nome</Label><input type="text" id="nome" name="nome" required/>
+<Label for="nasc">Data de Nascimento</Label><input type="text" id="nasc" name="dataNasc" required/>
+<Label for="tel">Telefone</Label><input type="text" id="tel" name="telefone" required/>
+<Label for="email">Email</Label><input type="email" id="email" name="email" required/>
 
 </fieldset>
       

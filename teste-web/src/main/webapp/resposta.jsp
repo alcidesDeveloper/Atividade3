@@ -12,21 +12,40 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <c:url value="css/estilos.css" var="urlEstilos" />
+    <link rel="stylesheet" href="${urlEstilos}" />
     <title>JSP Page</title>
   </head>
   
   <body>
     <h1>Informações dos Contatos</h1>
-    <div>
-       <c:forEach items="${list}" var="value">
-  <li><c:out value="${value}"/></li>
- </c:forEach>
-     
+    
+        <table>
+            <thead>
+            <th>Nome</th>
+            <th>Data de Nascimento</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Data de Cadastro</th>
+            </thead>
+            <tbody>
+                <%int i = 1;%>
+                <tr>
+                <c:forEach items="${list}" var="value">
+                    <td><c:out value="${value}"/></td>
+                    <%if(i % 5 == 0){%>
+                        </tr>
+                    <%}
+                    i++;%>               
+                </c:forEach>                
+            </tbody>
+        </table>
+            
  
         <p>
     <a href="formulario.jsp">Voltar para a tela do TesteServlet</a>
   </p>
-  
-</div>
+
+
 </body>
 </html>
